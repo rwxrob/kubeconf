@@ -1,5 +1,6 @@
 name: Build and Release
 on:
+  push:
   create:
     tags:
       - v*
