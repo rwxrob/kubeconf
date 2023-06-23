@@ -10,7 +10,8 @@ import (
 )
 
 // Config wraps the client-go type of the same name to allow for
-// additional marshalling methods.
+// additional marshalling methods. See
+// k8s.io/client-go/tools/clientcmd/api for more details.
 type Config api.Config
 
 // Load returns a Config struct created using the default loading rules
