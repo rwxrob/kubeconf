@@ -22,6 +22,7 @@ jobs:
   release:
     needs: [build]
     name: Release on GitHub
+    runs-on: ubuntu-latest
     steps:
       - name: Validates GO releaser config
         uses: docker://goreleaser/goreleaser:latest
