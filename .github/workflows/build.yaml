@@ -1,9 +1,6 @@
-name: Build and Release
+name: Build
 on:
   push:
-  create:
-    tags:
-      - v*
 
 jobs:
   build:
@@ -18,23 +15,3 @@ jobs:
 
       - name: Build it
         run: go build -v ./...
-
-  release:
-    needs: [build]
-    name: Release on GitHub
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v3
-
-      - name: Validates GO releaser config
-        uses: docker://goreleaser/goreleaser:latest
-        with:
-          args: check
-
-      - name: Create release on GitHub
-        uses: docker://goreleaser/goreleaser:latest
-        with:
-          args: release
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
