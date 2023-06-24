@@ -1,2 +1,2 @@
 builds:
-  main: ./cmd/kubectl-kubeconf
+  - main: "./cmd/kubectl-kubeconf"
