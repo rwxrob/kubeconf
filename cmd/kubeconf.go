@@ -12,7 +12,7 @@ import (
 
 // overriden by goreleaser via ldflags but keep up to date for
 // `go install `
-var version = `(version unknown)`
+var version = `v0.3.2`
 
 var rootCmd = &cobra.Command{
 
