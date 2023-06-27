@@ -1,3 +1,17 @@
-# Access KUBECONFIG files same as kubectl
+# Access combined KUBECONFIG file data as JSON
 
-See included [`kubectl-kubeconf`](cmd/kubectl-kubeconf/main.go) plugin for example usage.
+```sh
+kubeconf | jq .
+```
+
+## Installation
+
+If you have go:
+
+```sh
+go install github.com/rwxrob/kubeconf@latest
+```
+
+## TODO
+
+* Full support for tab completion of JSON path equivalents
