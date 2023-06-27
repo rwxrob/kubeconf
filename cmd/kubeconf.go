@@ -10,7 +10,8 @@ import (
 	cli "k8s.io/cli-runtime/pkg/genericclioptions"
 )
 
-// set by goreleaser via ldflags
+// overriden by goreleaser via ldflags but keep up to date for
+// `go install `
 var version = `(version unknown)`
 
 var rootCmd = &cobra.Command{
@@ -38,9 +39,9 @@ var versionCmd = &cobra.Command{
 }
 
 func Execute() {
-	confflags := cli.NewConfigFlags(true)
+	//confflags := cli.NewConfigFlags(true)
 	ownflags := pflag.NewFlagSet("kubeconf", pflag.ExitOnError)
-	confflags.AddFlags(ownflags)
+	//confflags.AddFlags(ownflags)
 	pflag.CommandLine = ownflags
 	rootCmd.AddCommand(versionCmd)
 	err := rootCmd.Execute()
